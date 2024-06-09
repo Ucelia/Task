@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: black;
+    }
+
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .gallery-item{
+        position: relative;
+        flex: 1 1 calc(25% - 1px);
+        height: 595px;
+        width: auto;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s, filter 0.3s;
+    }
+
+    .gallery-item:hover .image{
+        transform: scale(1.05);
+        filter: blur(5px) grayscale(100%);
+    }
+
+    .image{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s, filter 0.3s;
+    }
+
+    .item-info{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        text-shadow: 1px 1px 4px black;
+        margin-top: 10px;
+    }
+
+    .item-info .link{
+        visibility: hidden;
+        opacity: 0;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .item-info .link{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .item-info h2{
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .item-info p{
+        margin: 5px 0 0;
+        font-size: 15px;
+        font-family: Microsoft YaHei Light;
+    }
+
+    .item-info a{
+        color: #00e5ff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    @media(max-width: 768px){
+        .gallery-item{
+            flex: 1 1 calc(50% - 1px);
+        }
+    }
+
+    @media(max-width: 480px){
+        .gallery-item{
+            flex: 1 1 100%;
+        }
+    }
+
+</style>
+<body>
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="image" style="background-image: url('images/1.jpg');"></div>
+            <div class="item-info">
+                <h2>FENNEC FOX</h2>
+                <p>India</p>
+                <div class="link"><a href="#">Know more &rarr;</a></div>
+
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="image" style="background-image: url('images/2.jpg');"></div>
+            <div class="item-info">
+                <h2>HUMPBACK AFRICA</h2>
+                <p>South Africa</p>
+                <div class="link"><a href="#">Know more &rarr;</a></div>
+
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="image" style="background-image: url('images/3.jpg');"></div>
+            <div class="item-info">
+                <h2>COMMON BROWN BABOON</h2>
+                <p>South Africa</p>
+                <div class="link"><a href="#">Know more &rarr;</a></div>
+
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="image" style="background-image: url('images/4.jpg');"></div>
+            <div class="item-info">
+                <h2>SPOTTED DEER</h2>
+                <p>Amazon</p>
+                <div class="link"><a href="#">Know more &rarr;</a></div>
+
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
